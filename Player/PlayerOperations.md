@@ -7,6 +7,14 @@ General guidelines:
 - Most methods return a bool for whether the operation succeeded
 - When an operation fails the source player is automatically messaged the reason why
 
-### Methods
+### Static methods
+
+`bool SetLoginMessage(Player p, string target, string value)`
+
+Attempts to change the login message of the destination player
+
+Failure causes:
+- Source player is muted
 
 ### Examples
+
