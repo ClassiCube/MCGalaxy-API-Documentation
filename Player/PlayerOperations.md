@@ -9,9 +9,14 @@ General guidelines:
 
 ### Static methods
 
+##### SetLoginMessage
+
 `bool SetLoginMessage(Player p, string target, string value)`
 
 Attempts to change the login message of the destination player
+
+Return value
+- true if changing login message succeeded, false if failed
 
 Failure causes:
 - Source player is muted
