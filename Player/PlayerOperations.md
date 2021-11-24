@@ -11,7 +11,7 @@ General guidelines:
 
 ##### SetLoginMessage
 
-`bool SetLoginMessage(Player p, string target, string value)`
+`bool SetLoginMessage(Player p, string target, string message)`
 
 Attempts to change the login message of the destination player
 
@@ -20,6 +20,39 @@ Return value
 
 Failure causes:
 - Source player is muted
+
+#### SetLogoutMessage
+
+`bool SetLogoutMessage(Player p, string target, string message)`
+
+Attempts to change the logout message of the destination player
+
+Failure causes;
+- Source player is muted
+
+#### SetNick
+
+`bool SetNick(Player p, string target, string nick)`
+
+Attempts to change the nickname (name that appears in chat) of the destination player
+
+Failure causes:
+- Source player is muted
+- Nickname is over 20 characters long
+
+#### SetTitle
+
+`bool SetTitle(Player p, string target, string title)`
+
+#### SetTitleColor
+
+`bool SetTitleColor(Player p, string target, string color)`
+
+#### SetColor
+
+`bool SetColor(Player p, string target, string color)`
+
+
 
 ### Examples
 
