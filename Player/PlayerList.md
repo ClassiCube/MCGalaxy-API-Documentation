@@ -8,41 +8,31 @@ General guidelines:
 
 ### Data related methods
 
-#### Add
-
-`bool Add(string name)`
+#### `bool Add(string name)`
 
 Attempts to add the given name to the list
 
 Return value
 - true if the name was added to the list, false if the name was already case-insensitively in the list
 
-#### Remove
-
-`bool Remove(string name)`
+#### `bool Remove(string name)`
 
 Attempts to remove the given name from the list
 
 Return value
 - true if the name was case-insensitively removed from the list
 
-#### Contains
-
-`bool Contains(string name)`
+#### `bool Contains(string name)`
 
 Returns whether the given name is case-insensitively included in this list
 
 ### I/O methods
 
-#### Save
-
-`void Save()`
+#### `void Save()`
 
 Saves the list of names to disc
 
-#### Load
-
-`static PlayerList Load(string path)`
+#### `static PlayerList Load(string path)`
 
 Returns a `PlayerList` object initialised with the list of names loaded from the given path
 

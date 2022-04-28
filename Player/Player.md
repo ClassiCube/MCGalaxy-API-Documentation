@@ -21,9 +21,7 @@ Some examples of virtual players
 
 ### Identification Fields
 
-#### DatabaseID
-
-`int DatabaseID`
+#### `int DatabaseID`
 
 Unique and persistent ID number associated with the name of this player
 
@@ -32,9 +30,7 @@ Remarks
 
 ### Network fields
 
-#### Session
-
-`IGameSession Session`
+#### `IGameSession Session`
 
 The `IGameSession` object for this online player's current session
 
@@ -42,9 +38,7 @@ Remarks
 - For virtual players **this field is null**
 - Generally methods in this class should be used instead of using `IGameSession` directly
 
-#### Socket
-
-`INetSocket Socket`
+#### `INetSocket Socket`
 
 The `INetSocket` object for this online player's network socket
 
@@ -56,9 +50,7 @@ Remarks
 
 ### Drawing fields
 
-#### BrushName
-
-`string BrushName`
+#### `string BrushName`
 
 The name of the [Brush] this player is currently using
 
@@ -66,9 +58,7 @@ Remarks
 - Cannot be null, defaults to `"Normal"`
 
 
-#### DefaultBrushArgs
-
-`string DefaultBrushArgs`
+####`string DefaultBrushArgs`
 
 The default arguments passed to the [Brush] when the player does not provide explicit arguments to a drawing command
 

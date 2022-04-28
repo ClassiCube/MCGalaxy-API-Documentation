@@ -9,21 +9,15 @@ General guidelines:
 
 ### Data related methods
 
-#### Update
-
-`void Update(string name, string data)`
+#### `void Update(string name, string data)`
 
 Updates (or creates) the data associated with the given name
 
-#### Contains
-
-`bool Contains(string name)`
+#### `bool Contains(string name)`
 
 Returns whether the given name is case-insensitively included in this list
 
-#### FindData
-
-`string FindData(string name)`
+#### `string FindData(string name)`
 
 Retrieves the data associated with the given name in this list
 
@@ -31,9 +25,7 @@ Return value
 - null if the name was not case-insensitively found in the list
 - the associated data as a string otherwise
 
-#### Remove
-
-`bool Remove(string name)`
+#### `bool Remove(string name)`
 
 Attempts to remove the given name (and associated data) from the list
 
@@ -42,15 +34,11 @@ Return value
 
 ### I/O methods
 
-#### Save
-
-`void Save()`
+####`void Save()`
 
 Saves the list of names and associated data to disc
 
-#### Load
-
-`static PlayerExtList Load(string path)`
+#### `static PlayerExtList Load(string path)`
 
 Returns a `PlayerExtList` object initialised with the list of names and associated data loaded from the given path
 
