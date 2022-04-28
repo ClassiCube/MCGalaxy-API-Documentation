@@ -1,12 +1,12 @@
 ### Summary
 
-`PlayerList` is a class that manages a **case-insensitive** list of names in a threadsafe manner
+`PlayerList` class manages a **case-insensitive** list of names in a threadsafe manner
 
 General guidelines:
 - Use the return value from `Add` and `Remove` - don't write code like `if (list.Contains(name)) { list.Remove(name); ..`
 - Although this class is intended for player names, it can also be used for level names etc
 
-### Instance methods
+### Data related methods
 
 #### Add
 
@@ -32,13 +32,28 @@ Return value
 
 Returns whether the given name is case-insensitively included in this list
 
+### I/O methods
+
 #### Save
 
 `void Save()`
 
 Saves the list of names to disc
 
-(Each name is written on a separate line)
+#### Load
+
+`static PlayerList Load(string path)`
+
+Returns a `PlayerList` object initialised with the list of names loaded from the given path
+
+Return value:
+- A new `PlayerList` instance on success, throws an exception on failure
 
 ### Examples
 
+```CSharp
+PlayerExtList list = PlayerExtList.Load("text/mylist.txt");
+list.Add("Player1", "A B C");
+list.Remove("Player2");
+list.Save();
+```
