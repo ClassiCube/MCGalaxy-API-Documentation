@@ -1,6 +1,6 @@
 ### Summary
 
-The `IGameSession` class abstracta a network session with a game (usually Minecraft classic) client
+The `IGameSession` class abstracts a network session with a game (usually Minecraft Classic compatible) client
 
 General guidelines:
 - When possible, higher level methods in the [Player] class should be used instead
@@ -31,3 +31,12 @@ Temporary unique ID number for this network session
 Remarks
 - When a client logs out and then logs in again, the session `ID` will be different
 
+### Methods
+
+
+#### `string ClientName()`
+
+Gets the name of the software the client is using
+
+Remarks
+- Software names **should not** be used to determine client feature support

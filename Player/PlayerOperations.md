@@ -58,4 +58,3 @@ Failure causes:
 - Source player is muted
 
 ### Examples
-
