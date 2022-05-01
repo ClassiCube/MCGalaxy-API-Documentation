@@ -1,12 +1,13 @@
 ### Summary
 
-The `BrushFactory` class is responsible for parsing input from a player to create a [brush](Drawing/Brush.md)
+The `BrushFactory` class is responsible for parsing input from a player to create a [Brush](/Drawing/Brush.md)
 
 Some visual examples of brushes
 [TODO sample image]
 
 Remarks
-- See also (BrushFactory.md)
+- The `BrushFactory` class is separate from the `Brush` class, because although rare,
+  some `BrushFactory` types return different `Brush` types depending on the player input (See `CheckeredBrushFactory` for example)
 
 ## API
 

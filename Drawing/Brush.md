@@ -1,12 +1,12 @@
 ### Summary
 
-The `Brush` class is responsible for determining the output blocks from most [draw operations](Drawing/DrawOp.md)
+The `Brush` class is responsible for determining the output blocks from most [draw operations](/Drawing/DrawOp.md)
 
 Some visual examples of brushes
 [TODO sample image]
 
 Remarks
-- See also (BrushFactory.md)
+- See also [BrushFactory](/Drawing/BrushFactory.md) class that parses player input to create a Brush
 
 ## API
 
@@ -38,7 +38,7 @@ Remarks:
 
 ## Examples
 
-`CSharp
+```CSharp
 public sealed class NeapolitanBrush : Brush
 {
 	public override string Name { get { return "Neapolitan"; } }
