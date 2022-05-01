@@ -7,6 +7,8 @@ General guidelines:
 (Don't write code like `if (list.Contains(name)) { list.Remove(name); ..`, just do `list.Remove(name);` )
 - Although this class is intended for player names, it can also be used for level names etc
 
+## API
+
 ### Data related methods
 
 #### `void Update(string name, string data)`
@@ -45,7 +47,7 @@ Returns a `PlayerExtList` object initialised with the list of names and associat
 Return value:
 - A new `PlayerExtList` instance on success, throws an exception on failure
 
-### Examples
+## Examples
 
 ```CSharp
 PlayerExtList list = PlayerExtList.Load("text/mylist.txt");

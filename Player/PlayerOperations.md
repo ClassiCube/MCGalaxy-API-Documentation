@@ -8,6 +8,8 @@ General guidelines:
 - When an operation fails, the source player is automatically messaged the reason why
 - If an empty string is provided for value argument, the related state will be reset to default for destination player
 
+## API
+
 ### Methods
 
 #### `bool SetLoginMessage(Player p, string target, string message)`
@@ -24,7 +26,7 @@ Failure causes:
 
 Attempts to change the logout message of the destination player
 
-Failure causes;
+Failure causes:
 - Source player is muted
 
 #### `bool SetNick(Player p, string target, string nick)`
@@ -57,4 +59,4 @@ Attempts to change the color of the destination player (e.g. name color in chat,
 Failure causes:
 - Source player is muted
 
-### Examples
+## Examples

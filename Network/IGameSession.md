@@ -33,10 +33,11 @@ Remarks
 
 ### Methods
 
-
 #### `string ClientName()`
 
 Gets the name of the software the client is using
 
 Remarks
 - Software names **should not** be used to determine client feature support
+
+## Examples

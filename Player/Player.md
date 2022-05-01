@@ -80,5 +80,5 @@ Remarks
 
 ### Static methods
 
-### Examples
+## Examples
 

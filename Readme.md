@@ -2,29 +2,27 @@
 - [Block](Block/Block.md)
 - [BlockPermissions](Block/BlockPermissions.md)
 
-### Commnds
+### Commands
 - [Command](Scripting/Commands.md)
 - [CommandPermissions](Scripting/CommandPermissions.md)
 
 ### Drawing
-- Brushes
-- Brush
-- BrushFactory
-- DrawOps
-- DrawOp
-- DrawOpPerformer
+- [Brush](Drawing/Brush.md)
+- [BrushFactory](Drawing/BrushFactory.md)
+- [DrawOp](Drawing/DrawOp.md)
+- [DrawOpPerformer](Drawing/DrawOpPerformer.md)
 
 ### Events
 
 ### Level
-- Level
-- LevelInfo
-- LevelActions
-- [LevelOperations] (Level/LevelOperations.md) - High level methods for manipulating levels
+- [Level](Level/Level.md)
+- [LevelInfo](Level/LevelInfo.md)
+- [LevelActions](Level/LevelActions.md)
+- [LevelOperations](Level/LevelOperations.md) - High level methods for manipulating levels
 
 ### Scripting
-- IScripting
-- ScriptingOperations
+- [IScripting](Scripting/IScripting.md)
+- [ScriptingOperations](Scripting/ScriptingOperations.md)
 
 ### Player
 - [Player](Player/Player.md) - Key class, represents an online or virtual (e.g. console) player

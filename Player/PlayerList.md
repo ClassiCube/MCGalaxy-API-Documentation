@@ -6,6 +6,8 @@ General guidelines:
 - Use the return value from `Add` and `Remove` - don't write code like `if (list.Contains(name)) { list.Remove(name); ..`
 - Although this class is intended for player names, it can also be used for level names etc
 
+## API
+
 ### Data related methods
 
 #### `bool Add(string name)`
@@ -39,11 +41,11 @@ Returns a `PlayerList` object initialised with the list of names loaded from the
 Return value:
 - A new `PlayerList` instance on success, throws an exception on failure
 
-### Examples
+## Examples
 
 ```CSharp
 PlayerExtList list = PlayerExtList.Load("text/mylist.txt");
-list.Add("Player1", "A B C");
+list.Add("Player1");
 list.Remove("Player2");
 list.Save();
 ```
