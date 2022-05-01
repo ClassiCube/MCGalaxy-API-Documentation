@@ -6,7 +6,7 @@ Some visual examples of brushes
 [TODO sample image]
 
 Remarks
-- See also [BrushFactory](/Drawing/BrushFactory.md) class that parses player input to create a Brush
+- See also the [BrushFactory](/Drawing/BrushFactory.md) class that parses player input to create a `Brush`
 
 ## API
 
@@ -38,11 +38,16 @@ Remarks:
 
 ## Examples
 
-```CSharp
+```
+using MCGalaxy;
+using MCGalaxy.Drawing.Brushes;
+using MCGalaxy.Drawing.Ops;
+using BlockID = System.UInt16;
+
 public sealed class NeapolitanBrush : Brush
 {
 	public override string Name { get { return "Neapolitan"; } }
-        
+
 	public override BlockID NextBlock(DrawOp op) {
 		int width     = op.Max.X - op.Min.X;
 		int oneThirdX = op.Min.X + width / 3;
@@ -52,10 +57,10 @@ public sealed class NeapolitanBrush : Brush
 			return Block.White;
 		} else if (op.Coords.X <= twoThirdX) {
 			return Block.Brown;
-        } else {
+		} else {
 			return Block.Pink;
 		}
-    }
+	}
 }
 ```
 [TODO output example image]

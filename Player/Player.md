@@ -32,27 +32,26 @@ Remarks
 
 #### `IGameSession Session`
 
-The `IGameSession` object for this online player's current session
+The [IGameSession](/Network/IGameSession.md) object for this online player's current session
 
 Remarks
 - For virtual players **this field is null**
-- Generally methods in this class should be used instead of using `IGameSession` directly
+- Generally methods in this class should be used instead of using the `Session` field directly
 
 #### `INetSocket Socket`
 
 The `INetSocket` object for this online player's network socket
 
 Remarks
-- For virtual player **this field is null**
-- Generally methods in this class should be used instead of using `INetSocket1 directly.
-  Be careful when using `Socket`, because it **allows you to send invalid data to the client**
-
+- For virtual players **this field is null**
+- Generally methods in this class should be used instead of using the `Socket` field directly.
+- Be careful when using `Socket`, because it **allows you to send invalid data to the client**
 
 ### Drawing fields
 
 #### `string BrushName`
 
-The name of the [Brush] this player is currently using
+The name of the [Brush](/Drawing/Brush.md) this player is currently using
 
 Remarks
 - Cannot be null, defaults to `"Normal"`
@@ -60,17 +59,15 @@ Remarks
 
 ####`string DefaultBrushArgs`
 
-The default arguments passed to the [Brush] when the player does not provide explicit arguments to a drawing command
+The default arguments passed to the [Brush](/Drawing/Brush.md) when the player does not provide explicit arguments to a drawing command
 
 Remarks
 - Cannot be null, defaults to `""`
 
 
-#### Tansform
+#### `Transform Transform`
 
-`Transform Transform`
-
-The [Transform] instance this player is currently using
+The [Transform](/Drawing/Transform.md) instance this player is currently using
 
 Remarks
 - Cannot be null, defaults to `NoTransform.Instance`

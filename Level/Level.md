@@ -3,7 +3,8 @@
 The `Level` class represents a world/map that is loaded into memory
 
 General guidelines:
-- Keep in mind that some methods update level state without broadcasting the changes to the players currently in the level, while other methods will both update the level state and also broadcast the changes to players
+- Keep in mind that some methods update level state without broadcasting the changes to the players currently in the level, 
+  while other methods will both update the level state and also broadcast the changes to players
 
 ## API
 

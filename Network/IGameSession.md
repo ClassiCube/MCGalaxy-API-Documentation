@@ -1,9 +1,9 @@
 ### Summary
 
-The `IGameSession` class abstracts a network session with a game (usually Minecraft Classic compatible) client
+The `IGameSession` class that abstracts a network session with a game (usually Minecraft Classic compatible) client
 
 General guidelines:
-- When possible, higher level methods in the [Player] class should be used instead
+- When possible, higher level methods in the [Player](/Player/Player.md) class should be used instead
 
 ## API
 
