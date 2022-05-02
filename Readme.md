@@ -9,7 +9,7 @@
 
 ### Drawing
 - [Brush](/Drawing/Brush.md) - Determines the blocks output from most draw operations
-- [BrushFactory](/Drawing/BrushFactory.md)
+- [BrushFactory](/Drawing/BrushFactory.md) - Parses player input to create a Brush
 - [DrawOp](/Drawing/DrawOp.md) - Produces blocks from an array of coordinates (e.g. a box)
 - [DrawOpPerformer](/Drawing/DrawOpPerformer.md)
 
@@ -22,8 +22,9 @@
 - [LevelOperations](/Level/LevelOperations.md) - High level methods for manipulating levels
 
 ### Scripting
-- [IScripting](/Scripting/IScripting.md)
-- [ScriptingOperations](/Scripting/ScriptingOperations.md)
+- [Plugin](/Scripting/Plugin.md)
+- [IScripting](/Scripting/IScripting.md) - Compiling source code and loading compiled DLLs
+- [ScriptingOperations](/Scripting/ScriptingOperations.md) - High level methods for scripting
 
 ### Player
 - [Player](/Player/Player.md) - Key class, represents an online or virtual (e.g. console) player

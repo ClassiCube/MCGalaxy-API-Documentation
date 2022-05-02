@@ -12,7 +12,7 @@ Remarks
 
 ## API
 
-### Properties
+### Instance properties & methods
 
 #### `abstract string Name { get; }`
 
@@ -21,8 +21,6 @@ Returns the name of this brush factory
 #### `abstract string Help { get; }`
 
 Returns an array summarising the possible player input that can be provided
-
-### Methods
 
 #### `abstract Brush Construct(BrushArgs args)`
 
@@ -34,6 +32,22 @@ Remarks:
 	* Player - The [Player](/Player/Player.md) that is attempting to create a brush
 	* Message - The raw arguments provided for input (including spaces)
 	* Block - The block ID of the block the player is currently holding
+	
+### Static fields & methods
+
+#### static List<BrushFactory> Brushes
+
+The list of all registered/known `BrushFactory` instances
+
+Remarks:
+- To register a `BrushFactory` so that it can be used by players, simply add to this list
+
+#### static BrushFactory Find(string name)
+
+Returns the registered `BrushFactory` whose name caselessly equals the given name
+
+Remarks:
+- Returns null if no matching `BrushFactory` is found
 
 ## Examples
 
