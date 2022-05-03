@@ -1,11 +1,13 @@
+This repository serves as a starting point for understanding MCGalaxy's API by documenting and providing examples for the essential classes
+
 ### Blocks
 - [Block](/Block/Block.md)
-- [BlockPermissions](/Block/BlockPermissions.md) - Which players can use which blocks
+- [BlockDefinition](/Block/BlockDefinition.md)
+- [BlockProps](/Block/BlockProps.md)
 
 ### Commands
 - [Command](/Scripting/Commands.md) - Performs an action based on player input
 - [CommandParser](/Scripting/CommandParser.md) - Helpers for parsing player input
-- [CommandPermissions](/Scripting/CommandPermissions.md) - Which players can use which commands
 
 ### Drawing
 - [Brush](/Drawing/Brush.md) - Determines the blocks output from most draw operations
@@ -14,20 +16,20 @@
 - [DrawOpPerformer](/Drawing/DrawOpPerformer.md)
 
 ### Events
+TODO
 
 ### Level
-- [Level](/Level/Level.md) - Array of blocks and associated data loaded into memory
+- [Level](/Level/Level.md) - Array of blocks and associated data loaded in memory
 - [LevelInfo](/Level/LevelInfo.md)
 - [LevelActions](/Level/LevelActions.md)
 - [LevelOperations](/Level/LevelOperations.md) - High level methods for manipulating levels
 
 ### Scripting
 - [Plugin](/Scripting/Plugin.md)
-- [IScripting](/Scripting/IScripting.md) - Compiling source code and loading compiled DLLs
-- [ScriptingOperations](/Scripting/ScriptingOperations.md) - High level methods for scripting
 
 ### Player
-- [Player](/Player/Player.md) - Key class, represents an online or virtual (e.g. console) player
+- [Group](/Player/Group.md)
+- [Player](/Player/Player.md) - Represents an online or virtual (e.g. console) player
 - [PlayerInfo](/Player/PlayerInfo.md)
 - [PlayerActions](/Player/PlayerActions.md)
 - [PlayerOperations](/Player/PlayerOperations.md) - High level methods for manipulating players

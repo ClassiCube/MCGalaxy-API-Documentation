@@ -38,15 +38,6 @@ Remarks
 - For virtual players **this field is null**
 - Generally methods in this class should be used instead of using the `Session` field directly
 
-#### `INetSocket Socket`
-
-The `INetSocket` object for this online player's network socket
-
-Remarks
-- For virtual players **this field is null**
-- Generally methods in this class should be used instead of using the `Socket` field directly.
-- Be careful when using `Socket`, because it **allows you to send invalid data to the client**
-
 ### Drawing fields
 
 #### `string BrushName`
@@ -74,6 +65,18 @@ Remarks
 
 
 ### Instance methods
+
+
+#### `void Send(byte[] buffer)`
+
+Sends data directly to this online player's client
+
+Remarks
+- For virtual players **using this method throws an exception**
+- Generally other methods should be preferred over using the`Send` method. For example
+- * In Player class: Message, SendBlockchange, SendCpeMessage, SendPosition
+- * In IGameSession class: SendSetReach, SendSpawnEntity etc
+- Be careful when using `Send`, because it **allows you to send invalid data to clients**
 
 ### Static methods
 

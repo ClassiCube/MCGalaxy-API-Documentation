@@ -19,7 +19,6 @@ Attempts to parse the given input as a boolean
 
 Attempts to parse the given input as an `Enum` member
 
-
 #### `static bool GetTimespan(Player p, string input, ref TimeSpan span, string action, string defUnit)`
 
 Attempts to parse the given input as a `Timespan` using shorthand form
