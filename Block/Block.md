@@ -35,11 +35,23 @@ Server block IDs -> Raw block IDs
 
 ### Fields
 
-#### `abstract string Name { get; }`
+#### `const byte CLASSIC_MAX_BLOCK`
 
-Returns the name of this brush
+Highest block ID supported in Classic (Obsidian)
 
-### Properties & Methods
+#### `const byte CPE_MAX_BLOCK`
+
+Highest block ID supported in Classic + CPE custom blocks (Stone Bricks)
+
+#### `static readonly int ExtendedCount`
+
+Total number of blocks supported by the current server
+
+Remarks
+- For standard/normal MCGalaxy this is 512
+- For TEN_BIT_BLOCKS MCGalaxy this is 1024
+
+### Conversion Methods
 
 #### `abstract string Name { get; }`
 
