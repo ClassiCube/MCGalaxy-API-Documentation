@@ -34,6 +34,25 @@ Remarks:
 
 Performs the draw operation (actually outputs the block using `output`)
 
+#### `void Setup(Player p, Level lvl, Vec3S32[] marks)`
+
+Initialises/Prepares the state of this draw operation from the given arguments
+
+Remarks:
+- Initialises `Player`, `Level`, `Min`, `Max` etc fields
+
+##### `protected DrawOpBlock Place(ushort x, ushort y, ushort z, Brush brush)`
+
+Returns a `DrawOpBlock` with the given x,y,z and block calculated by the given brush
+        
+#### `protected DrawOpBlock Place(ushort x, ushort y, ushort z, BlockID block)`
+
+Returns a `DrawOpBlock` with the given x,y,z and the given block type
+        
+#### `protected Vec3U16 Clamp(Vec3S32 pos)`
+
+Constrains/Clamps the given coordinates to lie within the Level's boundaries
+
 ## Fields
 
 #### Vec3S32 Min
