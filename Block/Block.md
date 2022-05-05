@@ -2,9 +2,6 @@
 
 The `DrawOp` class is responsible for taking one or more input coordinates/marks and producing output blocks
 
-Some visual examples of draw operations
-[TODO sample image]
-
 Remarks
 - Draw operations do not only have to draw shapes (ReplaceDrawOp, RestoreSelectionDrawOp TODO)
 
@@ -13,22 +10,23 @@ Remarks
 Because of historical reasons, not all block IDs that you see in the client have the same block ID in MCGalaxy.
 (Because Block IDs 66-255 were already used for special blocks such as physics blocks, portals, etc)
 
-|| Server Block ID | Group | Raw Block ID
-|| 0-65  | Classic & CPE blocks | 0-65
-|| 66-255 | Special blocks | (none)
-|| 256-321 | (unused) | 0-65
-|| 322-511 | Custom blocks #1 | 66-255
-|| 512-767 | Custom blocks #2 | 256-511
-|| 768-1023 | Custom blocks #3 | 512-767
+| Server Block ID | Group | Raw Block ID
+|-----------------|-------|-------------
+| 0-65  | Classic & CPE blocks | 0-65
+| 66-255 | Special blocks | (none)
+| 256-321 | (unused) | 0-65
+| 322-511 | Custom blocks #1 | 66-255
+| 512-767 | Custom blocks #2 | 256-511
+| 768-1023 | Custom blocks #3 | 512-767
 
 ---
 
-Raw block IDs -> Server block IDs
+### Raw block IDs -> Server block IDs
 - It is recommended to use `Block.FromRaw()` to convert from raw Block IDs to server Block IDs for clarity
 - Manual conversion is relatively straightforward though - just add 256 if the raw block ID is over 65
 
-Server block IDs -> Raw block IDs
-- It is recommended `Block.ToRaw`
+### Server block IDs -> Raw block IDs
+- It is recommended to use `Block.ToRaw()`
 - Note however that you **must** ensure that the block ID is not a special block - use `Block.Convert` first if necessary
 
 ## API
