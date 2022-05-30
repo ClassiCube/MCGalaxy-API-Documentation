@@ -15,14 +15,14 @@ General guidelines:
 Attempts to add the given name to the list
 
 Return value
-- true if the name was added to the list, false if the name was already case-insensitively in the list
+- `true` if the name was added to the list, `false` if the name was already case-insensitively in the list
 
 #### `bool Remove(string name)`
 
 Attempts to remove the given name from the list
 
 Return value
-- true if the name was case-insensitively removed from the list
+- `true` if the name was case-insensitively removed from the list
 
 #### `bool Contains(string name)`
 
@@ -44,7 +44,7 @@ Return value:
 ## Examples
 
 ```CSharp
-PlayerExtList list = PlayerExtList.Load("text/mylist.txt");
+PlayerList list = PlayerList.Load("text/mylist.txt");
 list.Add("Player1");
 list.Remove("Player2");
 list.Save();
