@@ -6,7 +6,7 @@ This repository serves as a starting point for understanding MCGalaxy's API by d
 - [BlockProps](/Block/BlockProps.md)
 
 ### Commands
-- [Command](/Scripting/Commands.md) - Performs an action based on player input
+- [Command](/Scripting/Command.md) - Performs an action based on player input
 - [CommandParser](/Scripting/CommandParser.md) - Helpers for parsing player input
 
 ### Drawing
