@@ -9,18 +9,11 @@ Remarks:
 
 ## API
 
-### static methods
-
-
-### Instance properties & methods
+### Required properties & methods
 
 #### `abstract string name { get; }`
 
 The full name of this command (e.g. `"Copy"`)
-
-#### `virtual string shortcut { get; }`
-
-The shortcut/short name of this command (e.g. `"c"`)
 
 #### `abstract string type { get; }`
 
@@ -29,6 +22,20 @@ The type/group of this command (see `CommandTypes` class)
 Remarks:
 - The available types/groups in the `CommandTypes` class are
 - * Building, Chat, Economy, Games, Information, Moderation, Other, World
+
+#### `abstract void Help(Player p)`
+
+Informs the given player what this command does and how to use it
+
+#### `abstract void Use(Player p, string message)`
+       
+Performs the action(s) of this command using the given arguments
+
+### Common properties & methods
+
+#### `virtual string shortcut { get; }`
+
+The shortcut/short name of this command (e.g. `"c"`)
 
 #### `virtual bool museumUsable { get; }`
 
@@ -46,8 +53,8 @@ Remarks:
 - * Guest, Builder, AdvBuilder, Operator, Admin, Owner
 - Alternatively you can use an explicit permission level (e.g. `(LevelPermission)15;`)
         
-        public abstract void Use(Player p, string message);
-        public abstract void Help(Player p);
+### Additional properties & methods
+
         public virtual void Help(Player p, string message) { Help(p); Formatter.PrintCommandInfo(p, this); }
         
         public virtual CommandPerm[] ExtraPerms { get { return null; } }
