@@ -37,9 +37,13 @@ Performs the action(s) of this command using the given arguments
 
 The shortcut/short name of this command (e.g. `"c"`)
 
+Default: `""`
+
 #### `virtual bool museumUsable { get; }`
 
 Whether this comand can be used in museums (private readonly [Levels](/Level/Level.md))
+
+Default: `true`
 
 Remarks:
 - Level altering (e.g. places a block) commands should return false
@@ -48,23 +52,25 @@ Remarks:
 
 The default minimum rank that is required to use this command
 
+Default: `LevelPermission.Guest`
+
 Remarks:
 - You can use one of the default rank permission levels from the `LevelPermission` class:
-- * Guest, Builder, AdvBuilder, Operator, Admin, Owner
+	- Guest, Builder, AdvBuilder, Operator, Admin, Owner
 - Alternatively you can use an explicit permission level (e.g. `(LevelPermission)15;`)
         
 ### Additional properties & methods
 
-        public virtual void Help(Player p, string message) { Help(p); Formatter.PrintCommandInfo(p, this); }
+#### `virtual void Help(Player p, string message) { Help(p); Formatter.PrintCommandInfo(p, this); }`
         
-        public virtual CommandPerm[] ExtraPerms { get { return null; } }
-        public virtual CommandAlias[] Aliases { get { return null; } }
+#### `virtual CommandPerm[] ExtraPerms { get { return null; } }`
+#### `virtual CommandAlias[] Aliases { get { return null; } }`
         
-        public virtual bool SuperUseable { get { return true; } }
-        public virtual bool MessageBlockRestricted { get { return false; } }
-        public virtual bool UseableWhenFrozen { get { return false; } }
-        public virtual bool LogUsage { get { return true; } }
-        public virtual bool UpdatesLastCmd { get { return true; } }
+#### `virtual bool SuperUseable { get { return true; } }`
+#### `virtual bool MessageBlockRestricted { get { return false; } }`
+#### `virtual bool UseableWhenFrozen { get { return false; } }`
+#### `virtual bool LogUsage { get { return true; } }`
+#### `virtual bool UpdatesLastCmd { get { return true; } }`
 
 ## Examples
 
