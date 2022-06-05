@@ -67,9 +67,27 @@ Remarks:
 #### `virtual CommandAlias[] Aliases { get { return null; } }`
         
 #### `virtual bool SuperUseable { get { return true; } }`
+
+Whether 'super' players (console, from discord, etc(
 #### `virtual bool MessageBlockRestricted { get { return false; } }`
-#### `virtual bool UseableWhenFrozen { get { return false; } }`
-#### `virtual bool LogUsage { get { return true; } }`
+#### `virtual bool UseableWhenFrozen { get; }`
+
+Whether frozen players can use this command
+
+Default: `false`
+
+Remarks:
+- Only informational commands (e.g `/Info`) should override this to return `true`
+
+#### `virtual bool LogUsage { get; }`
+
+Whether using this command is logged to server logs
+
+Default: `true`
+
+Remarks:
+- Only security sensitive commands (e.g. `/Pass`) should override this to return `false`
+
 #### `virtual bool UpdatesLastCmd { get { return true; } }`
 
 ## Examples
