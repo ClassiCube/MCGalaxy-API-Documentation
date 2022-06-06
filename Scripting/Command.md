@@ -62,14 +62,29 @@ Remarks:
 ### Additional properties & methods
 
 #### `virtual void Help(Player p, string message) { Help(p); Formatter.PrintCommandInfo(p, this); }`
-        
+ 
+Extended help
+       
 #### `virtual CommandPerm[] ExtraPerms { get { return null; } }`
-#### `virtual CommandAlias[] Aliases { get { return null; } }`
-        
-#### `virtual bool SuperUseable { get { return true; } }`
 
-Whether 'super' players (console, from discord, etc(
+Extra permissions to use parts of this command's functionality
+
+#### `virtual CommandAlias[] Aliases { get { return null; } }`
+
+More than shortcuts
+      
+#### `virtual bool SuperUseable { get; }`
+
+Whether 'super' players (console, from discord, etc) can use this command
+
+Default: `true`
+
+Remarks:
+- Commands that can only be used in-game should override this to return `false`
+
 #### `virtual bool MessageBlockRestricted { get { return false; } }`
+
+
 #### `virtual bool UseableWhenFrozen { get; }`
 
 Whether frozen players can use this command
@@ -88,7 +103,14 @@ Default: `true`
 Remarks:
 - Only security sensitive commands (e.g. `/Pass`) should override this to return `false`
 
-#### `virtual bool UpdatesLastCmd { get { return true; } }`
+#### `virtual bool UpdatesLastCmd { get; }`
+
+Whether using this command updates player's 'most recently used command's
+
+Default: `true`
+
+Remarks:
+- Only commands that should not expose their usage to other players via `/Last` should override this to return `false` (e.g. /opchat)
 
 ## Examples
 
