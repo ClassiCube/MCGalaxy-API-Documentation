@@ -8,7 +8,7 @@ Remarks
 - The `BrushFactory` class is separate from the `Brush` class, because although rare,
   some `BrushFactory` types return different `Brush` types depending on the player input (See `CheckeredBrushFactory` for example)
 - `BrushFactory` instances are essentially singletons, therefore you should not use any modifiable class level fields 
-  (to avoid running into rare issues where two players both try to use the same `BrushFactory` instance at the exact same time)
+  (to avoid running into rare issues when two players both try to use the same `BrushFactory` instance at the exact same time)
 
 ## API
 
@@ -29,9 +29,9 @@ Parses input from the given player to return a new [Brush](/Drawing/Brush.md)
 Remarks:
 - Returns `null` when the input provided by the player is invalid
 - `BrushArgs` is a class consisting of the following three fields:
-	* Player - The [Player](/Player/Player.md) that is attempting to create a brush
-	* Message - The raw arguments provided for input (including spaces)
-	* Block - The block ID of the block the player is currently holding
+	* `Player` - The [Player](/Player/Player.md) that is attempting to create a brush
+	* `Message` - The raw arguments provided for input (including spaces)
+	* `Block` - The block ID of the block the player is currently holding
 	
 ### Static fields & methods
 
@@ -94,7 +94,7 @@ public class FoodBrushFactory : BrushFactory
 
 ...
 
-BrushFactory.Brushes.Add(new BrushFactory());
+BrushFactory.Brushes.Add(new FoodBrushFactory());
 ```
 
 [TODO add remarks about how should use IsBlockAllowed/GetBlockIfAllowed]
