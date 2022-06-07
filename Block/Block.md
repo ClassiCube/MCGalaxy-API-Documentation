@@ -1,9 +1,10 @@
 ### Summary
 
-The `DrawOp` class is responsible for taking one or more input coordinates/marks and producing output blocks
+The `Block` class provides utility functionality relating to Block IDs and Block names
 
 Remarks
-- Draw operations do not only have to draw shapes (ReplaceDrawOp, RestoreSelectionDrawOp TODO)
+- Block IDs in MCGalaxy are unsigned 16 bit integers. 
+To distinguish these from other unsigned 16 bit integers, typically `using BlockID = System.UInt16;` is inserted at the top of files
 
 ## Block IDs
 
@@ -51,6 +52,10 @@ Remarks
 
 ### Conversion Methods
 
+- Because level only blocks can be defined, results from this function can change depending on the player's level and should never be cached
+
+### Validation/Parsing Methods
+
 #### `abstract string Name { get; }`
 
 Returns the name of this draw operations
@@ -73,18 +78,6 @@ Initialises/Prepares the state of this draw operation from the given arguments
 
 Remarks:
 - Initialises `Player`, `Level`, `Min`, `Max` etc fields
-
-##### `protected DrawOpBlock Place(ushort x, ushort y, ushort z, Brush brush)`
-
-Returns a `DrawOpBlock` with the given x,y,z and block calculated by the given brush
-        
-#### `protected DrawOpBlock Place(ushort x, ushort y, ushort z, BlockID block)`
-
-Returns a `DrawOpBlock` with the given x,y,z and the given block type
-        
-#### `protected Vec3U16 Clamp(Vec3S32 pos)`
-
-Constrains/Clamps the given coordinates to lie within the Level's boundaries
 
 ## Fields
 
