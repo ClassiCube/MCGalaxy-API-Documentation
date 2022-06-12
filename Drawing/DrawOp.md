@@ -10,12 +10,6 @@ Remarks
 
 ## API
 
-### Fields
-
-#### `abstract string Name { get; }`
-
-Returns the name of this brush
-
 ### Properties & Methods
 
 #### `abstract string Name { get; }`
@@ -53,7 +47,7 @@ Returns a `DrawOpBlock` with the given x,y,z and the given block type
 
 Constrains/Clamps the given coordinates to lie within the Level's boundaries
 
-## Fields
+### Fields
 
 #### Vec3S32 Min
 
