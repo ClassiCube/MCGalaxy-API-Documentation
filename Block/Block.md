@@ -54,78 +54,24 @@ Remarks
 
 - Because level only blocks can be defined, results from this function can change depending on the player's level and should never be cached
 
+#### `static string GetName(Player p, BlockID block)`
+
+Remarks:
+- A [Player](/Player/Player.md) instance is required because block names can differ per-level
+- Results from this function should never be cached
+
 ### Validation/Parsing Methods
 
-#### `abstract string Name { get; }`
+#### `static BlockID Parse(Player p, string input)`
 
-Returns the name of this draw operations
 
-#### `abstract long BlocksAffected(Level lvl, Vec3S32[] marks)`
 
-Estimates the total number of blocks that this draw operation may affect
+#### `static BlockID Convert(BlockID block)`
 
-Remarks:
-- This should be implemented as a simple estimate (shouldn't perform any complex calculations)
-- This is an upper bound/worst case estimate (assumes that all potentially affected blocks will actually be changed)
-
-#### `abstract void Perform(Vec3S32[] marks, Brush brush, DrawOpOutput output)`
-
-Performs the draw operation (actually outputs the block using `output`)
-
-#### `void Setup(Player p, Level lvl, Vec3S32[] marks)`
-
-Initialises/Prepares the state of this draw operation from the given arguments
+Converts special block IDs to the block IDs that clients see in the world
 
 Remarks:
-- Initialises `Player`, `Level`, `Min`, `Max` etc fields
-
-## Fields
-
-#### Vec3S32 Min
-
-The minimum coordinates of the bounds of this draw operation
-
-Remarks:
-- This is the smallest X/Y/Z from all of the input coordinates/marks
-
-#### Vec3S32 Max
-
-The maximum coordinates of the bounds of this draw operation
-
-Remarks:
-- This is the largest X/Y/Z from all of the input coordinates/marks
-
-#### DrawOpBlock Coords
-
-The coordinates of the current block being processed by this draw operation
-
-Remarks:
-- This field is mainly intended for use by [Brushes](/Drawing/Brush.md)
-
-#### Player Player
-
-The player that is executing this draw operation
-
-#### Level Level
-
-The Level that this draw operation is being performed on
-
-#### ushort Flags
-
-The BlockDB change type for blocks affected by this draw operation
-
-[TODO /b example image]
-
-Remarks:
-- This field should be set in the constructor of the draw operation class
-- The supported flag values from the `BlockDBFlags` class are
--	* Drawn, Replaced, Pasted, Cut, Filled, Restored, UndoOther, UndoSelf, RedoSelf, FixGrass
-
-##### bool AffectedByTransform
-
-Whether the output of this draw operation can potentially be transformed (e.g. scaled or rotated) by a [Transform](/Drawing/Transform.md)
-
-- Draw operations whose output must not be transformed (e.g. Replace, Restore, UndoPlayer) should set this field to false
+- Unrecognised special block IDs **are not converted**
 
 ## Examples
 
