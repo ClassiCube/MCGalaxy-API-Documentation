@@ -110,30 +110,28 @@ Whether using this command updates player's 'most recently used command's
 Default: `true`
 
 Remarks:
-- Only commands that should not expose their usage to other players via `/Last` should override this to return `false` (e.g. /opchat)
+- Only commands that should not expose their usage to other players via `/Last` should override this to return `false` (e.g. `/opchat`)
 
 ## Examples
 
 ```CSharp
 // simple example of a command
 using System;
+using MCGalaxy;
 
-namespace MCGalaxy 
+public class CmdSimple : Command
 {
-	public class CmdSimple : Command
-	{
-		public override string name { get { return "Simple"; } }
-		public override string type { get { return "other"; } }
-		public override LevelPermission defaultRank { get { return LevelPermission.Guest; } }
+	public override string name { get { return "Simple"; } }
+	public override string type { get { return "other"; } }
+	public override LevelPermission defaultRank { get { return LevelPermission.Guest; } }
 
-		// A simple command that messages you 'Hello World!' when you type '/Simple'
-		public override void Use(Player p, string message) {
-			p.Message("Hello World!");
-		}
+	// A simple command that messages you 'Hello World!' when you type '/Simple'
+	public override void Use(Player p, string message) {
+		p.Message("Hello World!");
+	}
 
-		public override void Help(Player p) {
-			p.Message("/Simple - Messages you 'Hello World!'");
-		}
+	public override void Help(Player p) {
+		p.Message("/Simple - Messages you 'Hello World!'");
 	}
 }
 ```
