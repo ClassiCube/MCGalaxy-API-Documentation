@@ -56,65 +56,34 @@ Remarks
 
 #### `static string GetName(Player p, BlockID block)`
 
+Returns the name of the given block
+
 Remarks:
 - A [Player](/Player/Player.md) instance is required because block names can differ per-level
-- Results from this function should never be cached
+- Results from this function should never be cached (as it can change per-level)
+- Blocks IDs that are not defined in the current level will return raw block ID instead
 
 ### Validation/Parsing Methods
 
 #### `static BlockID Parse(Player p, string input)`
 
+Parses the given input containing either a block ID, block name, or block alias
 
+Remarks:
+- Returns `Block.Invalid` if the input could not be parsed
+- A [Player](/Player/Player.md) instance is required because defined blocks can differ per-level
+- Results from this function should not be cached (as it can change per-level)
 
 #### `static BlockID Convert(BlockID block)`
 
-Converts special block IDs to the block IDs that clients see in the world
+Converts special block IDs to the block IDs that clients would see in the world
 
 Remarks:
 - Unrecognised special block IDs **are not converted**
 
+Examples:
+- `Door_Wood` is converted to `Wood`
+
 ## Examples
 
-```CSharp
-using MCGalaxy;
-using MCGalaxy.Drawing;
-using MCGalaxy.Drawing.Brushes;
-using MCGalaxy.Drawing.Ops;
-using MCGalaxy.Maths;
-
-public class OddBoxDrawOp : DrawOp
-{
-	public override string Name { get { return "OddBox"; } }
-	
-	public override long BlocksAffected(Level lvl, Vec3S32[] marks) {
-		long width  = Max.X - Min.X + 1;
-		long height = Max.Y - Min.Y + 1;
-		long length = Max.Z - Min.Z + 1;
-		
-		// NOTE: strictly speaking, the marks should be examined to calculate the number of rows
-		// that will actually get drawn - but it's simpler to just always assume the worst case
-		return (width / 2 + 1) * height * length;
-	}
-	
-	public override void Perform(Vec3S32[] marks, Brush brush, DrawOpOutput output) {
-		//  Min contains the smallest X,Y,Z of the marks, so can be used as lower left corner of the box
-		//  Max contains the largest X,Y,Z of the marks, so can be used as upper right corner of the box
-		// Both coordinates are then constrained/clamped to lie within the boundaries of the level
-		Vec3U16 min = Clamp(Min), max = Clamp(Max);
-		
-		for (ushort y = min.Y; y <= max.Y; y++)
-			for (ushort z = min.Z; z <= max.Z; z++)
-				for (ushort x = min.X; x <= max.X; x++)
-		{
-			// skip even coordinates on X axis
-			if ((x % 2) == 0) continue;
-			
-			// use the given brush to determine the type of block to place at x,y,z
-			// then actually output the block by invoking 'output' callback function
-			output(Place(x, y, z, brush));
-		}
-	}
-}
-
-```
-[TODO output example image]
+TODO
