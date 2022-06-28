@@ -3,7 +3,7 @@
 The `PlayerExtList` class manages a **case-insensitive** list of names and simple associated data in a threadsafe manner
 
 General guidelines:
-- Use the return value from `Add` and `Remove` to detect whether a name was actually added or removed
+- Use the return value from `Add` and `Remove` to detect whether a name was actually added or removed <br/>
 (Don't write code like `if (list.Contains(name)) { list.Remove(name); ..`, just do `list.Remove(name);` )
 - Although this class is intended for player names, it can also be used for level names etc
 
@@ -24,7 +24,7 @@ Returns whether the given name is case-insensitively included in this list
 Retrieves the data associated with the given name in this list
 
 Return value
-- null if the name was not case-insensitively found in the list
+- `null` if the name was not case-insensitively found in the list
 - the associated data as a string otherwise
 
 #### `bool Remove(string name)`
@@ -32,11 +32,11 @@ Return value
 Attempts to remove the given name (and associated data) from the list
 
 Return value
-- true if the name was case-insensitively removed from the list
+- `true` if the name was case-insensitively removed from the list
 
 ### I/O methods
 
-####`void Save()`
+#### `void Save()`
 
 Saves the list of names and associated data to disc
 
