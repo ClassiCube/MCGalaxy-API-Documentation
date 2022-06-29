@@ -19,7 +19,7 @@ Some examples of virtual players
 
 ## API
 
-### Identification Fields
+### Identification Fields / methods
 
 #### `int DatabaseID`
 
@@ -28,17 +28,42 @@ Unique and persistent ID number associated with the name of this player
 Remarks
 - This field is valid even for virtual players
 
-### Network fields
+### Network fields / methods
 
 #### `IGameSession Session`
 
-The [IGameSession](/Network/IGameSession.md) object for this online player's current session
+The [IGameSession](/Network/IGameSession.md) instance of this online player's current session
 
 Remarks
 - For virtual players **this field is null**
 - Generally methods in this class should be used instead of using the `Session` field directly
 
-### Drawing fields
+#### `void Send(byte[] buffer)`
+
+Sends data directly to this online player's client
+
+Remarks
+- For virtual players **using this method throws an exception**
+- Generally other methods should be preferred over using the`Send` method. For example
+- * In Player class: Message, SendBlockchange, SendCpeMessage, SendPosition
+- * In IGameSession class: SendSetReach, SendSpawnEntity etc
+- Be careful when using `Send`, because it **allows you to send invalid data to clients**
+
+#### `void SendBlockchange(ushort x, ushort y, ushort z, BlockID block)`
+
+Sends a block change/update at the given coordinates to this player
+
+Remarks:
+- Does nothing if the given coordinates are outside this player's current level boundaries
+
+#### `void SendPosition(Position pos, Orientation rot)`
+
+Sends a position and orientation update request to this player
+
+Remarks:
+- Because of network latency, it usually takes some time before `Pos` field is updated
+
+### Drawing fields / methods
 
 #### `string BrushName`
 
@@ -65,18 +90,6 @@ Remarks
 
 
 ### Instance methods
-
-
-#### `void Send(byte[] buffer)`
-
-Sends data directly to this online player's client
-
-Remarks
-- For virtual players **using this method throws an exception**
-- Generally other methods should be preferred over using the`Send` method. For example
-- * In Player class: Message, SendBlockchange, SendCpeMessage, SendPosition
-- * In IGameSession class: SendSetReach, SendSpawnEntity etc
-- Be careful when using `Send`, because it **allows you to send invalid data to clients**
 
 ### Static methods
 
