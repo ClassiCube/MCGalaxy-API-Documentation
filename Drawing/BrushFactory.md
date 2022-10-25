@@ -7,7 +7,7 @@ The `BrushFactory` class is responsible for parsing input from a player to creat
 Remarks
 - The `BrushFactory` class is separate from the `Brush` class, because although rare,
   some `BrushFactory` types return different `Brush` types depending on the player input (See `CheckeredBrushFactory` for example)
-- `BrushFactory` instances are essentially singletons, therefore you should not use any modifiable class level fields 
+- `BrushFactory` instances are essentially singletons, **therefore you should not use any non-constant class fields** 
   (to avoid running into rare issues when two players both try to use the same `BrushFactory` instance at the exact same time)
 
 ## API
@@ -18,7 +18,7 @@ Remarks
 
 Returns the name of this brush factory
 
-#### `abstract string Help { get; }`
+#### `abstract string[] Help { get; }`
 
 Returns an array summarising the possible player input that can be provided
 
@@ -35,19 +35,19 @@ Remarks:
 	
 ### Static fields & methods
 
-#### static List<BrushFactory> Brushes
+#### `static List<BrushFactory> Brushes`
 
 The list of all registered/known `BrushFactory` instances
 
 Remarks:
 - To register a `BrushFactory` so that it can be used by players, simply add to this list
 
-#### static BrushFactory Find(string name)
+#### `static BrushFactory Find(string name)`
 
 Returns the registered `BrushFactory` whose name caselessly equals the given name
 
 Remarks:
-- Returns null if no matching `BrushFactory` is found
+- Returns `null` if no matching `BrushFactory` is found
 
 ## Examples
 
@@ -96,6 +96,6 @@ public class FoodBrushFactory : BrushFactory
 
 BrushFactory.Brushes.Add(new FoodBrushFactory());
 ```
+[TODO explain where to put Brushes.Add call]
 
 [TODO add remarks about how should use IsBlockAllowed/GetBlockIfAllowed]
-[TODO add staic fields/methods]
