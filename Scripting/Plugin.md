@@ -66,28 +66,4 @@ Default: Messages the given player `No help is available for this plugin.`
 
 ## Examples
 
-```CSharp
-// simple example of a command
-using System;
-
-namespace MCGalaxy 
-{
-	public class CmdSimple : Command
-	{
-		public override string name { get { return "Simple"; } }
-		public override string type { get { return "other"; } }
-		public override LevelPermission defaultRank { get { return LevelPermission.Guest; } }
-
-		// A simple command that messages you 'Hello World!' when you type '/Simple'
-		public override void Use(Player p, string message) {
-			p.Message("Hello World!");
-		}
-
-		public override void Help(Player p) {
-			p.Message("/Simple - Messages you 'Hello World!'");
-		}
-	}
-}
-```
-
-```
+TODO
