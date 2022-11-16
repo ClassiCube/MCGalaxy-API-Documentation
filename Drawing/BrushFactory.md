@@ -5,9 +5,9 @@ The `BrushFactory` class is responsible for parsing input from a player to creat
 [TODO sample image]
 
 Remarks
-- The `BrushFactory` class is separate from the `Brush` class, because although rare,
-  some `BrushFactory` types return different `Brush` types depending on the player input (See `CheckeredBrushFactory` for example)
-- `BrushFactory` instances are essentially singletons, **therefore you should not use any non-constant class fields** 
+- The `BrushFactory` class is separate from the `Brush` class to allow `BrushFactory` classes to return
+  different `Brush` types depending on the player input (See `CheckeredBrushFactory` for example)
+- `BrushFactory` instances are essentially singletons, **therefore you should not use any class fields/properties** 
   (to avoid running into rare issues when two players both try to use the same `BrushFactory` instance at the exact same time)
 
 ## API
@@ -84,7 +84,7 @@ public class FoodBrushFactory : BrushFactory
 			return null;
 		}
 
-		// Check user is actually allowed to use the blocks
+		// Check player is actually allowed to use the blocks
 		if (!CommandParser.IsBlockAllowed(args.Player, "draw with", block1)) return null;
 		if (!CommandParser.IsBlockAllowed(args.Player, "draw with", block2)) return null;
 		
