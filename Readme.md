@@ -11,6 +11,7 @@ This repository serves as a starting point for understanding MCGalaxy's API by d
 
 ## Database
 - [Database](/Database/Database.md)
+- [PlayerDB](/Database/PlayerDB.md)
 
 ### Drawing
 - [Brush](/Drawing/Brush.md) - Determines the blocks output from most draw operations
