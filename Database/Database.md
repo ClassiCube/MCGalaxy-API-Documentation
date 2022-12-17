@@ -1,6 +1,6 @@
 ### Summary
 
-The `Database` class abstracts executing SQL commands/queries in the underlying Database System (RMDBS) via both a low level and high level interface
+The `Database` class abstracts executing SQL commands/queries in the underlying Database System (RDBMS) via both a low level and high level interface
 
 todo: move via LL/HL to second line?
 
@@ -67,7 +67,7 @@ Remarks:
 
 ### Data retrieval (Query) methods
 
-#### `static int CountRows(string table, [optional] string modifier, params object[] args)`
+#### `static int CountRows(string table, optional string modifier, params object[] args)`
 
 Counts rows in the given table.
 
@@ -75,7 +75,7 @@ Remarks:
 - `modifier` is an optional argument that does not have to be provided
 - If `modifier` is provided, then it is treated as SQL to filter which rows are counted
 
-#### `static string ReadString(string table, string column, [optional] string modifier, params object[] args)`
+#### `static string ReadString(string table, string column, optional string modifier, params object[] args)`
        
 Returns value of first column in last row read from the given table
 
@@ -83,7 +83,7 @@ Remarks:
 - `modifier` is an optional argument that does not have to be provided
 - If `modifier` is provided, then it is treated as SQL to filter which rows are read
 									 
-#### `static List<string[]> GetRows(string table, string column, [optional] string modifier, params object[] args)`
+#### `static List<string[]> GetRows(string table, string column, optional string modifier, params object[] args)`
        
 Returns all columns of all rows read from the given table
 
@@ -91,7 +91,7 @@ Remarks:
 - `modifier` is an optional argument that does not have to be provided
 - If `modifier` is provided, then it is treated as SQL to filter which rows are read, return rows in a certain order, etc
 							
-#### `static List<string[]> ReadRows(string table, string column, ReaderCallback callback, [optional] string modifier, params object[] args)`
+#### `static List<string[]> ReadRows(string table, string column, ReaderCallback callback, optional string modifier, params object[] args)`
        
 Iterates over read rows for the given table
 
@@ -99,28 +99,42 @@ Remarks:
 - `modifier` is an optional argument that does not have to be provided
 - If `modifier` is provided, then it is treated as SQL to filter which rows are read, return rows in a certain order, etc
 
-#### Data modifying (Command) methods
+### Data modifying (Command) methods
 
-TODO FINISH
+#### `static void CopyAllRows(string srcTable, string dstTable)`
 
-/// <summary> Inserts/Copies all the rows from the source table into the destination table. </summary>
-        /// <remarks> May NOT work correctly if the tables have different schema. </remarks>
-        public static void CopyAllRows(string srcTable, string dstTable);
-        
-        /// <summary> Updates rows for the given table. </summary>
-        /// <param name="modifier"> Optional SQL to filter which rows are updated. </param>
-        public static void UpdateRows(string table, string columns,
-                                       string modifier = "", params object[] args);
-        
-        /// <summary> Deletes rows for the given table. </summary>
-        /// <param name="modifier"> Optional SQL to filter which rows are deleted. </param>
-        public static void DeleteRows(string table, string modifier = "", params object[] args);
+Inserts/Copies all the rows from the source table into the destination table
 
-        /// <summary> Adds a row to the given table. </summary>
-        public static void AddRow(string table, string columns, params object[] args);
+Remarks:
+- **May not work correctly if the tables have different schema**
+- Both source table and destination table must exist
+
+#### `static void UpdateRows(string table, string columns, optional string modifier, params object[] args)`
+
+Updates rows for the given table [TODO explain better]
+
+Remarks:
+- `modifier` is an optional argument that does not have to be provided
+- If `modifier` is provided, then it is treated as SQL to filter which rows are updated
+
+#### `static void DeleteRows(string table, string columns, optional string modifier, params object[] args)`
+
+Deletes rows for the given table
+
+Remarks:
+- `modifier` is an optional argument that does not have to be provided
+- If `modifier` is provided, then it is treated as SQL to filter which rows are deleted
+
+#### `static void AddRow(string table, string columns, params object[] args)`
+
+Adds a row to the given table
         
-        /// <summary> Adds or replaces a row (same primary key) in the given table. </summary>
-        public static void AddOrReplaceRow(string table, string columns, params object[] args);
+#### `static void AddOrReplaceRow(string table, string columns, params object[] args)`
+
+Adds or replaces a row with the same primary key in the given table
+
+Remarks:
+- A row must have been designated a primary key   TODO link to ColumnDesc
 
 ## Examples
 
