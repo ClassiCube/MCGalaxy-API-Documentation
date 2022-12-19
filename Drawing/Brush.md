@@ -26,7 +26,7 @@ Remarks:
 - Most brushes do not need to override this method
 
 Examples:
-- `ReplaceBrush` changes `op.Flags` to `BlockDBFlags.Replaced` (so that /b shows 'Replaced' instead of 'Drawn')
+- `ReplaceBrush` changes `op.Flags` to `BlockDBFlags.Replaced` (so that `/b` shows 'Replaced' instead of 'Drawn')
 - `CloudyBrush` attempts to calculate appropriate noise thresholds based on the draw operation's boundaries
 
 #### `abstract BlockID NextBlock(DrawOp op)`

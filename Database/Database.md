@@ -6,6 +6,8 @@ todo: move via LL/HL to second line?
 
 TODO: stuff should return true/false failure or throw exceptions?
 
+TODO: Backend field
+
 todo: link to IDatabaseBackend and ColumnDesc
 Remarks
 - Generally the high level interface should be used if possible (that way you do not need to worry about SQL differences betweeen Database System implementations)
@@ -25,6 +27,15 @@ Database.AddRow("Example", "name,count", "John", 400);
 
 Database.GetRows("Example", "name,count", "WHERE count >= @0 && count < @1", 50, 9000);
 ```
+
+## Fields
+
+#### `IDatabaseBackend Backend`
+
+The [IDatabaseBackend](Database/IDatabaseBackend.md) instance for the database system implementation currently being used
+
+Remarks:
+- The `IDatabaseBackend` class provides methods and properties for a Database System implementation
 
 ## High level API
 
@@ -51,7 +62,7 @@ Renames the source table to the given name
 Remarks
 - Source table must exist and destination table must not exist
 
-#### `static void static void DeleteTable(string table)`
+#### `static void DeleteTable(string table)`
 		
 Completely removes the given table
 
@@ -103,7 +114,7 @@ Remarks:
 
 #### `static void CopyAllRows(string srcTable, string dstTable)`
 
-Inserts/Copies all the rows from the source table into the destination table
+Inserts/Copies all of the rows from the source table into the destination table
 
 Remarks:
 - **May not work correctly if the tables have different schema**
@@ -111,7 +122,7 @@ Remarks:
 
 #### `static void UpdateRows(string table, string columns, optional string modifier, params object[] args)`
 
-Updates rows for the given table [TODO explain better]
+Updates rows in the given table [TODO explain better]
 
 Remarks:
 - `modifier` is an optional argument that does not have to be provided
@@ -119,7 +130,7 @@ Remarks:
 
 #### `static void DeleteRows(string table, string columns, optional string modifier, params object[] args)`
 
-Deletes rows for the given table
+Deletes rows in the given table
 
 Remarks:
 - `modifier` is an optional argument that does not have to be provided
