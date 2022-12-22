@@ -1,6 +1,6 @@
 ### Summary
 
-The `Database` class abstracts executing SQL commands/queries in the underlying Database System (RDBMS) via both a low level and high level interface
+The `Database` class abstracts executing SQL commands/queries for a Database System (RDBMS), via both a low level and high level interface
 
 todo: move via LL/HL to second line?
 
@@ -12,6 +12,7 @@ todo: link to IDatabaseBackend and ColumnDesc
 Remarks
 - Generally the high level interface should be used if possible (that way you do not need to worry about SQL differences betweeen Database System implementations)
 - Parameterised queries using SQL parameters should always be used whenever possible
+- By default `SQLite` is used for the database system (however e.g. `MySQL` could be used instead)
 
 #### Parameterised queries / Prepared statements
 
@@ -32,7 +33,7 @@ Database.GetRows("Example", "name,count", "WHERE count >= @0 && count < @1", 50,
 
 #### `IDatabaseBackend Backend`
 
-The [IDatabaseBackend](Database/IDatabaseBackend.md) instance for the database system implementation currently being used
+The [IDatabaseBackend](/Database/IDatabaseBackend.md) instance for the database system implementation currently being used
 
 Remarks:
 - The `IDatabaseBackend` class provides methods and properties for a Database System implementation
