@@ -7,7 +7,7 @@ The `BrushFactory` class is responsible for parsing input from a player to creat
 Remarks
 - The `BrushFactory` class is separate from the `Brush` class to allow `BrushFactory` classes to return
   different `Brush` types depending on the player input (See `CheckeredBrushFactory` for example)
-- `BrushFactory` instances are essentially singletons, **therefore you should not use any class fields/properties** 
+- `BrushFactory` instances are essentially singletons, **therefore class fields/properties must not be used** 
   (to avoid running into rare issues when two players both try to use the same `BrushFactory` instance at the exact same time)
 
 ## API

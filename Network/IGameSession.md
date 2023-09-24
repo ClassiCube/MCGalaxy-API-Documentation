@@ -21,7 +21,7 @@ Remarks
 The highest raw block ID supported by the game client
 
 Remarks
-- For vanilla Minecraft Classic client, highest supported raw ID is `49` (obsidian)
+- For vanilla Minecraft Classic 0.30 client, highest supported raw ID is `49` (obsidian)
 - For ClassiCube client, highest supported raw ID might be `49`, `65`, `255` or `767`
 
 #### `int ID`

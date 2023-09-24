@@ -18,14 +18,16 @@ Remarks
 
 The `Database` class is designed to easily support parameterised SQL queries and commands
 
-Therefore the majority of methods take an additional `args` argument that specifiy the values of one or more SQL parameters
+Therefore most methods take an additional `args` argument that specifiy the values of one or more SQL parameters
 
 NOTE: For simplicity, only the `@[arg index]` format is supported for SQL parameter names
 
 Examples:
 ```CSharp
+// Adds a row with "John" for name and "400" for count
 Database.AddRow("Example", "name,count", "John", 400);
 
+// Retrieves all rows whose count is between 50 and 9000
 Database.GetRows("Example", "name,count", "WHERE count >= @0 && count < @1", 50, 9000);
 ```
 
@@ -68,7 +70,7 @@ Remarks
 Completely removes the given table
 
 Remarks:
-	Does nothing if the given table does not actually exist
+- Does nothing if the given table does not actually exist
         
 #### `static void AddColumn(string table, ColumnDesc col, string colAfter)`
 		

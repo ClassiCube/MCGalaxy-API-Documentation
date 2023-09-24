@@ -46,7 +46,7 @@ Whether this comand can be used in museums (private readonly [Levels](/Level/Lev
 Default: `true`
 
 Remarks:
-- Level altering (e.g. places a block) commands should return false
+- Level altering (e.g. places a block) commands should return `false`
 
 #### `virtual LevelPermission defaultRank`
 
@@ -57,21 +57,21 @@ Default: `LevelPermission.Guest`
 Remarks:
 - You can use one of the default rank permission levels from the `LevelPermission` class:
 	- Guest, Builder, AdvBuilder, Operator, Admin, Owner
-- Alternatively you can use an explicit permission level (e.g. `(LevelPermission)15;`)
+- Alternatively an explicit permission level can be used (e.g. `(LevelPermission)15;`)
         
 ### Additional properties & methods
 
 #### `virtual void Help(Player p, string message) { Help(p); Formatter.PrintCommandInfo(p, this); }`
  
-Extended help
+Extended help TODO
        
 #### `virtual CommandPerm[] ExtraPerms { get { return null; } }`
 
-Extra permissions to use parts of this command's functionality
+Extra permissions to use parts of this command's functionality TODO
 
 #### `virtual CommandAlias[] Aliases { get { return null; } }`
 
-More than shortcuts
+More than shortcuts TODO
       
 #### `virtual bool SuperUseable { get; }`
 

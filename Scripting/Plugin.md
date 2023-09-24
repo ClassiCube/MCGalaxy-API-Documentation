@@ -54,7 +54,7 @@ Default: `""`
 
 #### `virtual bool LoadAtStartup { get; }`
 
-Whether this plugin's `Load` method is automatically called upon server startup
+Whether this plugin's `Load()` method is automatically called upon server startup
 
 Default: `true`
 
@@ -67,3 +67,4 @@ Default: Messages the given player `No help is available for this plugin.`
 ## Examples
 
 TODO
+

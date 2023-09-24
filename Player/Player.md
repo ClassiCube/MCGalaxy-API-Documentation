@@ -44,10 +44,10 @@ Sends data directly to this online player's client
 
 Remarks
 - For virtual players **using this method throws an exception**
-- Generally other methods should be preferred over using the`Send` method. For example
+- Generally other methods should be preferred over using the `Send()` method. For example
 - * In Player class: Message, SendBlockchange, SendCpeMessage, SendPosition
 - * In IGameSession class: SendSetReach, SendSpawnEntity etc
-- Be careful when using `Send`, because it **allows you to send invalid data to clients**
+- Be careful when using `Send()`, because it **allows sending invalid data to clients**
 
 #### `void SendBlockchange(ushort x, ushort y, ushort z, BlockID block)`
 
